@@ -10,7 +10,7 @@
     "Struct Definition": {
 		"prefix": "struct",
 		"body": [
-			"entity ${1:name} {}"
+			"struct ${1:name} {}"
 		],
 		"description": "struct Definition"
 	},
@@ -18,10 +18,7 @@
 	"Operation Definition": {
 		"prefix": "operation",
 		"body": [
-			"/**",
-			" * ${1:name}",
-			" */",
-			"${1:name}() {",
+			"operation ${1:name}() {",
 			"\t$0",
 			"}"
 		],
@@ -31,10 +28,7 @@
     "Query Definition": {
 		"prefix": "query",
 		"body": [
-			"/**",
-			" * ${1:name}",
-			" */",
-			"${1:name}() {",
+			"query ${1:name}() {",
 			"\t$0",
 			"}"
 		],
@@ -44,7 +38,7 @@
 	"Import Statement": {
 		"prefix": "import",
 		"body": [
-			"import $0: \"${1:module}\";"
+			"import $0: ${1:module};"
 		],
 		"description": "Import external module"
 	},
@@ -67,5 +61,5 @@
 			"$0"
 		],
 		"description": "Log to the console"
-	},
+	}
 }

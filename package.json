@@ -2,10 +2,10 @@
     "name": "rell",
     "displayName": "Rell",
     "author": {
-        "name": "Dennis Kirsch",
-        "email": "mail@dennis-kirsch.de"
+        "name": "Freebird",
+        "email": "topdev323@gmail.com"
     },
-    "publisher": "DennisKirsch",
+    "publisher": "free bird",
     "description": "Basic syntax highlighting for Chromia blockchain language (rell).",
     "version": "1.0.0",
     "engines": {
@@ -15,16 +15,31 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "rell",
-            "aliases": ["Rell", "rell"],
-            "extensions": [".rell"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "rell",
-            "scopeName": "source.rell",
-            "path": "./syntaxes/rell.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "rell",
+                "aliases": [
+                    "Rell",
+                    "rell"
+                ],
+                "extensions": [
+                    ".rell"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "rell",
+                "scopeName": "source.rell",
+                "path": "./syntaxes/rell.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "rell",
+                "path": "./snippets/rell.code-snippets.json"
+            }
+        ]
     }
 }
