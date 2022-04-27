@@ -1,0 +1,71 @@
+{
+	"Entity Definition": {
+		"prefix": "entity",
+		"body": [
+			"entity ${1:name} {}"
+		],
+		"description": "entity Definition"
+	},
+
+    "Struct Definition": {
+		"prefix": "struct",
+		"body": [
+			"entity ${1:name} {}"
+		],
+		"description": "struct Definition"
+	},
+
+	"Operation Definition": {
+		"prefix": "operation",
+		"body": [
+			"/**",
+			" * ${1:name}",
+			" */",
+			"${1:name}() {",
+			"\t$0",
+			"}"
+		],
+		"description": "operation Method Definition"
+	},
+
+    "Query Definition": {
+		"prefix": "query",
+		"body": [
+			"/**",
+			" * ${1:name}",
+			" */",
+			"${1:name}() {",
+			"\t$0",
+			"}"
+		],
+		"description": "query Method Definition"
+	},
+
+	"Import Statement": {
+		"prefix": "import",
+		"body": [
+			"import $0: \"${1:module}\";"
+		],
+		"description": "Import external module"
+	},
+
+	"create Statement": {
+		"prefix": "create",
+		"body": [
+			"/**",
+			" * ${1:name}",
+			" */",
+			"${1:name}( @ {})",
+			"});"
+		],
+		"description": "Property getter"
+	},
+	"Log to the print": {
+		"prefix": "print",
+		"body": [
+			"print($1);",
+			"$0"
+		],
+		"description": "Log to the console"
+	},
+}
