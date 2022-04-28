@@ -214,27 +214,27 @@
     "description": "rell test"
   },
   "test.tx": {
-    "prefix": "rell.test.tx",
+    "prefix": ".tx",
     "body": [".tx($0($1))"],
     "description": "test transaction"
   },
   "test.op": {
-    "prefix": "rell.test.op",
+    "prefix": ".op",
     "body": [".op($0($1))"],
     "description": "test Operation"
   },
   "test.sign": {
-    "prefix": "rell.test.sign",
+    "prefix": ".sign",
     "body": [".sign($0)"],
     "description": "transaction sign"
   },
   "test.nop": {
-    "prefix": "rell.test.sign",
+    "prefix": ".nop",
     "body": [".nop($0)"],
     "description": "nop transaction"
   },
   "test.run": {
-    "prefix": "rell.test.run",
+    "prefix": ".run",
     "body": [".run()"],
     "description": "transaction run"
   },
