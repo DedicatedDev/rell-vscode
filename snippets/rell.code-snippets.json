@@ -180,13 +180,13 @@
 
   "@external: prefix": {
     "prefix": "@external",
-    "body": ["@external('$1');"],
+    "body": ["@external('$1')"],
     "description": "Prefix keyword"
   },
 
   "@mount: prefix": {
     "prefix": "@mount",
-    "body": ["@mount('$1');"],
+    "body": ["@mount('$1')"],
     "description": "Prefix key word"
   },
 
