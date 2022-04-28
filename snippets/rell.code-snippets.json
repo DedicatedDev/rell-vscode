@@ -210,7 +210,7 @@
 
   "Rell test": {
     "prefix": "rell.test",
-    "body": ["rell.test.$0;"],
+    "body": ["rell.test.$0"],
     "description": "rell test"
   },
   "test.tx": {
