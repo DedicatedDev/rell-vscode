@@ -1,246 +1,210 @@
 {
-	
-	"NameSpace Definition": {
-		"prefix": "NameSpace",
-		"body": [
-			"namespace ${1:name} {}"
-		],
-		"description": "NameSpace Definition"
-	},
-	
-	"Entity Definition": {
-		"prefix": "entity",
-		"body": [
-			"entity ${1:name} {}"
-		],
-		"description": "entity Definition"
-	},
+  "NameSpace Definition": {
+    "prefix": "namespace",
+    "body": ["namespace ${1:name} {}"],
+    "description": "NameSpace Definition"
+  },
 
-    "Struct Definition": {
-		"prefix": "struct",
-		"body": [
-			"struct ${1:name} {}"
-		],
-		"description": "struct Definition"
-	},
+  "Module: Definition": {
+    "prefix": "module",
+    "body": ["module;"],
+    "description": "Module Definition"
+  },
 
-	"Operation Definition": {
-		"prefix": "operation",
-		"body": [
-			"operation ${1:name}() {",
-			"\t$0",
-			"}"
-		],
-		"description": "operation Method Definition"
-	},
+  "Entity Definition": {
+    "prefix": "entity",
+    "body": ["entity ${1:name} {}"],
+    "description": "entity Definition"
+  },
 
-    "Query Definition": {
-		"prefix": "query",
-		"body": [
-			"query ${1:name}() {",
-			"\t$0",
-			"}"
-		],
-		"description": "query Method Definition"
-	},
+  "Struct Definition": {
+    "prefix": "struct",
+    "body": ["struct ${1:name} {}"],
+    "description": "struct Definition"
+  },
 
-	"function Definition": {
-		"prefix": "function",
-		"body": [
-			"function ${1:name}(): $2 {",
-			"\t$0",
-			"}"
-		],
-		"description": "query Method Definition"
-	},
+  "Operation Definition": {
+    "prefix": "operation",
+    "body": ["operation ${1:name}() {", "\t$0", "}"],
+    "description": "operation Method Definition"
+  },
 
-	"Import Statement": {
-		"prefix": "import",
-		"body": [
-			"import $0: ${1:module};"
-		],
-		"description": "Import external module"
-	},
+  "Query Definition": {
+    "prefix": "query",
+    "body": ["query ${1:name}() {", "\t$0", "}"],
+    "description": "query Method Definition"
+  },
 
-	"At-Operator": {
-		"prefix": "At-Operator",
-		"body": [
-			"$0 @$1 {$2 == $3 and $4 == $5 } (.$6,.$7);"
-		],
-		"description": "At-Operator for database manage"
-	},
+  "function Definition": {
+    "prefix": "function",
+    "body": ["function ${1:name}(): $2 {", "\t$0", "}"],
+    "description": "query Method Definition"
+  },
 
-	"Sorting-asc": {
-		"prefix": "Sorting-asc",
-		"body": [
-			"$0 @$1 {$2 == $3 and $4 == $5 } (@sort .$6, @sort .$7);"
-		],
-		"description": "At-Operator with result sort"
-	},
+  "Import Statement": {
+    "prefix": "import",
+    "body": ["import $0: ${1:module};"],
+    "description": "Import external module"
+  },
 
-	"Sorting-desc ": {
-		"prefix": "Sorting-desc",
-		"body": [
-			"$0 @$1 {.$2 == $2 and .$3 == $3 } ( @sort_desc .$2, @sort_desc .$3);"
-		],
-		"description": "At-Operator with result sort"
-	},
+  "At-Operator": {
+    "prefix": "operator",
+    "body": ["$0 @$1 {$2 == $3 and $4 == $5 } (.$6,.$7);"],
+    "description": "At-Operator for database manage"
+  },
 
-	"Tail part-Limit ": {
-		"prefix": "Limiting records",
-		"body": [
-			" limit $1;"
-		],
-		"description": "At-Operator with limited result"
-	},
-	"Tail part-Offset ": {
-		"prefix": "Offsetting records",
-		"body": [
-			" offset $1;"
-		],
-		"description": "At-Operator with Offsetting records"
-	},
+  "Sorting-asc": {
+    "prefix": "sorting-asc",
+    "body": ["$0 @$1 {$2 == $3 and $4 == $5 } (@sort .$6, @sort .$7);"],
+    "description": "At-Operator with result sort"
+  },
 
-	"Nested At-Operators": {
-		"prefix": "Offsetting records",
-		"body": [
-			"$0 @* { .$1 == $1 @ { .name == 'Microsoft' } } ( ... );"
-		],
-		"description": "At-Operator with Offsetting records"
-	},
+  "Sorting-desc ": {
+    "prefix": "sorting-desc",
+    "body": ["$0 @$1 {.$2 == $2 and .$3 == $3 } ( @sort_desc .$2, @sort_desc .$3);"],
+    "description": "At-Operator with result sort"
+  },
 
-	"Create Statement": {
-		"prefix": "create",
-		"body": [
-			"create $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)",
-			"});"
-		],
-		"description": "Must specify all attributes that don’t have default values."
-	},
+  "Tail part-Limit ": {
+    "prefix": "limiting-records",
+    "body": [" limit $1;"],
+    "description": "At-Operator with limited result"
+  },
+  "Tail part-Offset ": {
+    "prefix": "offsetting-records",
+    "body": [" offset $1;"],
+    "description": "At-Operator with Offsetting records"
+  },
 
-	"Update Statement": {
-		"prefix": "Update",
-		"body": [
-			"update $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)",
-			"});"
-		],
-		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of updated records does not match the cardinality, a run-time error occurs."
-	},
+  "Nested At-Operators": {
+    "prefix": "nested-operator",
+    "body": ["$0 @* { .$1 == $1 @ { .name == 'Microsoft' } } ( ... );"],
+    "description": "At-Operator with Offsetting records"
+  },
 
-	"Delete Statement": {
-		"prefix": "Delete",
-		"body": [
-			"delete $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7);"
-		],
-		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of deleted records does not match the cardinality, a run-time error occurs."
-	},
+  "Create Statement": {
+    "prefix": "create",
+    "body": ["create $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)", "});"],
+    "description": "Must specify all attributes that don’t have default values."
+  },
 
-	"Is_Signer Statement": {
-		"prefix": "is_signer",
-		"body": [
-			"op_context.is_signer(${1:pubkey});"
-		],
-		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of deleted records does not match the cardinality, a run-time error occurs."
-	},
+  "Update Statement": {
+    "prefix": "update",
+    "body": ["update $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)", "});"],
+    "description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of updated records does not match the cardinality, a run-time error occurs."
+  },
 
-	"Block_height Statement": {
-		"prefix": "Block Height",
-		"body": [
-			"op_context.block_height;"
-		],
-		"description": "the height of the block currently being built (equivalent of op_context.transaction.block.block_height)."
-	},
+  "Delete Statement": {
+    "prefix": "delete",
+    "body": ["delete $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7);"],
+    "description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of deleted records does not match the cardinality, a run-time error occurs."
+  },
 
-	"Last_block_time Statement": {
-		"prefix": "Last block time",
-		"body": [
-			"op_context.last_block_time;"
-		],
-		"description": "Other timestamp of the last block, in milliseconds (like System.currentTimeMillis() in Java). Returns -1 if there is no last block (the block currently being built is the first block)."
-	},
+  "Op_context Statement": {
+    "prefix": "op_context",
+    "body": ["op_context.${1:pubkey};"],
+    "description": "op_context"
+  },
 
-	"context transaction Statement": {
-		"prefix": "context transaction",
-		"body": [
-			"op_context.transaction;"
-		],
-		"description": "the transaction currently being built"
-	},
+  "Chain_context Statement": {
+    "prefix": "chain_context",
+    "body": ["chain_context.args.$0;"],
+    "description": "chain_context"
+  },
 
-	"abs: function": {
-		"prefix": "abs global function",
-		"body": [
-			"abs(${1:integer});"
-		],
-		"description": "absolute value"
-	},
+  "Is_Signer Statement": {
+    "prefix": "is_signer",
+    "body": ["is_signer(${1:pubkey});"],
+    "description": "signer"
+  },
 
-	"empty: function": {
-		"prefix": "empty global function",
-		"body": [
-			"abs(${1:T?});"
-		],
-		"description": "returns true if the argument is null or an empty collection and false"
-	},
+  "Block_height Statement": {
+    "prefix": "block_height",
+    "body": ["op_context.block_height;"],
+    "description": "the height of the block currently being built (equivalent of op_context.transaction.block.block_height)."
+  },
 
-	
-	"log: function": {
-		"prefix": "log global function",
-		"body": [
-			"log(...);"
-		],
-		"description": "print a message to the log (same usage as print)"
-	},
+  "Last_block_time Statement": {
+    "prefix": "last-block-time",
+    "body": ["op_context.last_block_time;"],
+    "description": "Other timestamp of the last block, in milliseconds (like System.currentTimeMillis() in Java). Returns -1 if there is no last block (the block currently being built is the first block)."
+  },
 
-	"max: function": {
-		"prefix": "max global function",
-		"body": [
-			"max($1,$2);"
-		],
-		"description": "maximum of two values"
-	},
+  "context transaction Statement": {
+    "prefix": "transaction",
+    "body": ["op_context.transaction;"],
+    "description": "the transaction currently being built"
+  },
 
-	"min: function": {
-		"prefix": "min global function",
-		"body": [
-			"min($1,$2);"
-		],
-		"description": "maximum of two values"
-	},
+  "abs: function": {
+    "prefix": "abs",
+    "body": ["abs(${1:integer});"],
+    "description": "absolute value"
+  },
 
-	"keccak256: function": {
-		"prefix": "keccak256 global function",
-		"body": [
-			"keccak256(${1:byte_array});"
-		],
-		"description": " cryptographic hash functions"
-	},
+  "empty: function": {
+    "prefix": "empty",
+    "body": ["abs(${1:T?});"],
+    "description": "returns true if the argument is null or an empty collection and false"
+  },
 
-	"sha256: function": {
-		"prefix": "sha256 global function",
-		"body": [
-			"sha256(${1:byte_array});"
-		],
-		"description": " cryptographic hash functions"
-	},
+  "log: function": {
+    "prefix": "log",
+    "body": ["log(...);"],
+    "description": "print a message to the log (same usage as print)"
+  },
 
+  "max: function": {
+    "prefix": "max",
+    "body": ["max($1,$2);"],
+    "description": "maximum of two values"
+  },
 
+  "min: function": {
+    "prefix": "min",
+    "body": ["min($1,$2);"],
+    "description": "maximum of two values"
+  },
 
-	
-	"Log to the print": {
-		"prefix": "print",
-		"body": [
-			"print($1);",
-			"$0"
-		],
-		"description": "Log to the console"
-	},
+  "keccak256: function": {
+    "prefix": "keccak256",
+    "body": ["keccak256(${1:byte_array});"],
+    "description": " cryptographic hash functions"
+  },
 
-	"Assert to the print": {
-		"prefix": "assert_equals",
-		"body": [
-			"assert_equals($0, $1);"
-		],
-		"description": "Log to the console"
-	}
+  "sha256: function": {
+    "prefix": "sha256",
+    "body": ["sha256(${1:byte_array});"],
+    "description": " cryptographic hash functions"
+  },
+
+  "@external: prefix": {
+    "prefix": "@external",
+    "body": ["@external('$1');"],
+    "description": "Prefix keyword"
+  },
+
+  "@mount: prefix": {
+    "prefix": "@mount",
+    "body": ["@mount('$1');"],
+    "description": "Prefix key word"
+  },
+
+  "Log to the print": {
+    "prefix": "print",
+    "body": ["print($1);", "$0"],
+    "description": "Log to the console"
+  },
+
+  "Require to the print": {
+    "prefix": "require",
+    "body": ["require($0);"],
+    "description": "Log to the console"
+  },
+
+  "Assert to the print": {
+    "prefix": "assert_equals",
+    "body": ["assert_equals($0, $1);"],
+    "description": "Log to the console"
+  }
 }
