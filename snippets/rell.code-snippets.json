@@ -35,6 +35,16 @@
 		"description": "query Method Definition"
 	},
 
+	"function Definition": {
+		"prefix": "function",
+		"body": [
+			"function ${1:name}(): $2 {",
+			"\t$0",
+			"}"
+		],
+		"description": "query Method Definition"
+	},
+
 	"Import Statement": {
 		"prefix": "import",
 		"body": [
@@ -43,22 +53,184 @@
 		"description": "Import external module"
 	},
 
-	"create Statement": {
+	"At-Operator": {
+		"prefix": "At-Operator",
+		"body": [
+			"$0 @$1 {$2 == $3 and $4 == $5 } (.$6,.$7);"
+		],
+		"description": "At-Operator for database manage"
+	},
+
+	"Sorting-asc": {
+		"prefix": "Sorting-asc",
+		"body": [
+			"$0 @$1 {$2 == $3 and $4 == $5 } (@sort .$6, @sort .$7);"
+		],
+		"description": "At-Operator with result sort"
+	},
+
+	"Sorting-desc ": {
+		"prefix": "Sorting-desc",
+		"body": [
+			"$0 @$1 {.$2 == $2 and .$3 == $3 } ( @sort_desc .$2, @sort_desc .$3);"
+		],
+		"description": "At-Operator with result sort"
+	},
+
+	"Tail part-Limit ": {
+		"prefix": "Limiting records",
+		"body": [
+			" limit $1;"
+		],
+		"description": "At-Operator with limited result"
+	},
+	"Tail part-Offset ": {
+		"prefix": "Offsetting records",
+		"body": [
+			" offset $1;"
+		],
+		"description": "At-Operator with Offsetting records"
+	},
+
+	"Nested At-Operators": {
+		"prefix": "Offsetting records",
+		"body": [
+			"$0 @* { .$1 == $1 @ { .name == 'Microsoft' } } ( ... );"
+		],
+		"description": "At-Operator with Offsetting records"
+	},
+
+	"Create Statement": {
 		"prefix": "create",
 		"body": [
-			"/**",
-			" * ${1:name}",
-			" */",
-			"${1:name}( @ {})",
+			"create $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)",
 			"});"
 		],
-		"description": "Property getter"
+		"description": "Must specify all attributes that don’t have default values."
 	},
+
+	"Update Statement": {
+		"prefix": "Update",
+		"body": [
+			"update $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)",
+			"});"
+		],
+		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of updated records does not match the cardinality, a run-time error occurs."
+	},
+
+	"Delete Statement": {
+		"prefix": "Delete",
+		"body": [
+			"delete $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7);"
+		],
+		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of deleted records does not match the cardinality, a run-time error occurs."
+	},
+
+	"Is_Signer Statement": {
+		"prefix": "is_signer",
+		"body": [
+			"op_context.is_signer(${1:pubkey});"
+		],
+		"description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of deleted records does not match the cardinality, a run-time error occurs."
+	},
+
+	"Block_height Statement": {
+		"prefix": "Block Height",
+		"body": [
+			"op_context.block_height;"
+		],
+		"description": "the height of the block currently being built (equivalent of op_context.transaction.block.block_height)."
+	},
+
+	"Last_block_time Statement": {
+		"prefix": "Last block time",
+		"body": [
+			"op_context.last_block_time;"
+		],
+		"description": "Other timestamp of the last block, in milliseconds (like System.currentTimeMillis() in Java). Returns -1 if there is no last block (the block currently being built is the first block)."
+	},
+
+	"context transaction Statement": {
+		"prefix": "context transaction",
+		"body": [
+			"op_context.transaction;"
+		],
+		"description": "the transaction currently being built"
+	},
+
+	"abs: function": {
+		"prefix": "abs global function",
+		"body": [
+			"abs(${1:integer});"
+		],
+		"description": "absolute value"
+	},
+
+	"empty: function": {
+		"prefix": "empty global function",
+		"body": [
+			"abs(${1:T?});"
+		],
+		"description": "returns true if the argument is null or an empty collection and false"
+	},
+
+	
+	"log: function": {
+		"prefix": "log global function",
+		"body": [
+			"log(...);"
+		],
+		"description": "print a message to the log (same usage as print)"
+	},
+
+	"max: function": {
+		"prefix": "max global function",
+		"body": [
+			"max($1,$2);"
+		],
+		"description": "maximum of two values"
+	},
+
+	"min: function": {
+		"prefix": "min global function",
+		"body": [
+			"min($1,$2);"
+		],
+		"description": "maximum of two values"
+	},
+
+	"keccak256: function": {
+		"prefix": "keccak256 global function",
+		"body": [
+			"keccak256(${1:byte_array});"
+		],
+		"description": " cryptographic hash functions"
+	},
+
+	"sha256: function": {
+		"prefix": "sha256 global function",
+		"body": [
+			"sha256(${1:byte_array});"
+		],
+		"description": " cryptographic hash functions"
+	},
+
+
+
+	
 	"Log to the print": {
 		"prefix": "print",
 		"body": [
 			"print($1);",
 			"$0"
+		],
+		"description": "Log to the console"
+	},
+
+	"Assert to the print": {
+		"prefix": "assert_equals",
+		"body": [
+			"assert_equals($0, $1);"
 		],
 		"description": "Log to the console"
 	}
