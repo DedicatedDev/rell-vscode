@@ -214,46 +214,46 @@
     "description": "rell test"
   },
   "test.tx": {
-    "prefix": ".tx",
-    "body": [".tx($0($1))"],
+    "prefix": "rell.test.tx",
+    "body": ["rell.test.tx($0)"],
     "description": "test transaction"
   },
   "test.op": {
-    "prefix": ".op",
-    "body": [".op($0($1))"],
+    "prefix": "rell.test.op",
+    "body": ["rell.test.op($0($1))"],
     "description": "test Operation"
   },
   "test.sign": {
-    "prefix": ".sign",
-    "body": [".sign($0)"],
+    "prefix": "rell.test.sign",
+    "body": [".rell.test.sign($0)"],
     "description": "transaction sign"
   },
   "test.nop": {
-    "prefix": ".nop",
-    "body": [".nop($0)"],
+    "prefix": "rell.test.nop",
+    "body": ["rell.test.nop($0)"],
     "description": "nop transaction"
   },
   "test.run": {
-    "prefix": ".run",
-    "body": [".run()"],
+    "prefix": "rell.test.run",
+    "body": ["rell.test.run()"],
     "description": "transaction run"
   },
 
 
   "test.keypairs": {
     "prefix": "rell.test.keypairs",
-    "body": [".keypairs.{$0,$1};"],
+    "body": ["rell.test.keypairs.{$0,$1};"],
     "description": "test Operation"
   },
 
   "test.privkeys": {
     "prefix": "rell.test.privkeys",
-    "body": [".privkeys.{$0,$1};"],
+    "body": ["rell.test.privkeys.{$0,$1};"],
     "description": "test Operation"
   },
   "test.pubkeys": {
     "prefix": "rell.test.pubkeys",
-    "body": [".pubkeys.{$0,$1};"],
+    "body": ["rell.test.pubkeys.{$0,$1};"],
     "description": "test Operation"
   }
 }
