@@ -1,4 +1,13 @@
 {
+	
+	"NameSpace Definition": {
+		"prefix": "NameSpace",
+		"body": [
+			"namespace ${1:name} {}"
+		],
+		"description": "NameSpace Definition"
+	},
+	
 	"Entity Definition": {
 		"prefix": "entity",
 		"body": [
