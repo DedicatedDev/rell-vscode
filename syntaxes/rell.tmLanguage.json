@@ -26,7 +26,12 @@
             "patterns": [{
                 "name": "constant.numeric.rell",
                 "match": "-?\\d*\\.?\\d+"
-            }]
+            },
+            {
+                "name": "constant.default.method.rell",
+                "match": "\\b(rell.test.block|rell.test.tx|rell.test.op|rell.test.keypairs|rell.test.nop)\\b"
+            }
+        ]
         },
         "ctrl-statements": {
             "patterns": [

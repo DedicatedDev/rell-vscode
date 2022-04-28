@@ -206,5 +206,54 @@
     "prefix": "assert_equals",
     "body": ["assert_equals($0, $1);"],
     "description": "Log to the console"
+  },
+
+  "Rell test": {
+    "prefix": "rell.test",
+    "body": ["rell.test.$0;"],
+    "description": "rell test"
+  },
+  "test.tx": {
+    "prefix": "rell.test.tx",
+    "body": [".tx($0($1))"],
+    "description": "test transaction"
+  },
+  "test.op": {
+    "prefix": "rell.test.op",
+    "body": [".op($0($1))"],
+    "description": "test Operation"
+  },
+  "test.sign": {
+    "prefix": "rell.test.sign",
+    "body": [".sign($0)"],
+    "description": "transaction sign"
+  },
+  "test.nop": {
+    "prefix": "rell.test.sign",
+    "body": [".nop($0)"],
+    "description": "nop transaction"
+  },
+  "test.run": {
+    "prefix": "rell.test.run",
+    "body": [".run()"],
+    "description": "transaction run"
+  },
+
+
+  "test.keypairs": {
+    "prefix": "rell.test.keypairs",
+    "body": [".keypairs.{$0,$1};"],
+    "description": "test Operation"
+  },
+
+  "test.privkeys": {
+    "prefix": "rell.test.privkeys",
+    "body": [".privkeys.{$0,$1};"],
+    "description": "test Operation"
+  },
+  "test.pubkeys": {
+    "prefix": "rell.test.pubkeys",
+    "body": [".pubkeys.{$0,$1};"],
+    "description": "test Operation"
   }
 }
