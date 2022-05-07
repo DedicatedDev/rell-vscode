@@ -204,9 +204,89 @@
 
   "Assert to the print": {
     "prefix": "assert_equals",
-    "body": ["assert_equals($0, $1);"],
-    "description": "Log to the console"
+    "body": ["assert_equals(actual: $1, expected: $2);"],
+    "description": "fail (throw an exception) if two values are not equal"
   },
+
+  "Assert not equal": {
+    "prefix": "assert_not_equals",
+    "body": ["assert_not_equals(actual: $1, expected: $2);"],
+    "description": " fail if the values are equal"
+  },
+
+  "Assert True": {
+    "prefix": "assert_true",
+    "body": ["assert_true(actual: $1);"],
+    "description": "assert that the value is “true”"
+  },
+  
+  "Assert False": {
+    "prefix": "assert_false",
+    "body": ["assert_false(actual: $1);"],
+    "description": "assert that the value is “false”"
+  },
+
+  "Assert Null": {
+    "prefix": "assert_null",
+    "body": ["assert_null(actual: $T);"],
+    "description": "assert that the value is null"
+  },
+
+
+  "Assert Not Null": {
+    "prefix": "assert_not_null",
+    "body": ["assert_not_null(actual: $1);"],
+    "description": "assert that the value is not null"
+  },
+
+
+  "Assert LT": {
+    "prefix": "assert_lt",
+    "body": ["assert_lt(actual: $T, expected: $T);"],
+    "description": "assert less than (actual < expected)"
+  },
+
+  "Assert GT": {
+    "prefix": "assert_gt",
+    "body": ["assert_gt(actual: $T, expected: $T);"],
+    "description": "assert greater than (actual > expected)"
+  },
+
+  "Assert LE": {
+    "prefix": "assert_le",
+    "body": ["assert_le(actual: $T, expected: $T);"],
+    "description": " assert less or equal (actual <= expected)"
+  },
+
+  "Assert GE": {
+    "prefix": "assert_ge",
+    "body": ["assert_ge(actual: $T, expected: $T);"],
+    "description": "assert greater or equal (actual >= expected)"
+  },
+
+  "Assert GT LT": {
+    "prefix": "assert_gt_le",
+    "body": ["assert_gt_le(actual: $T, min: $T, max: $T);"],
+    "description": "assert (actual > min) and (actual < max)"
+  },
+ 
+  "Assert GT LE": {
+    "prefix": "assert_gt_le",
+    "body": ["assert_gt_le(actual: $T, expected: $T);"],
+    "description": "assert (actual > min) and (actual <= max)"
+  },
+
+  "Assert GE LT": {
+    "prefix": "assert_ge_lt",
+    "body": ["assert_ge_lt(actual: $T, expected: $T);"],
+    "description": "assert (actual >= min) and (actual < max)"
+  },
+  "Assert GE LE": {
+    "prefix": "assert_ge_le",
+    "body": ["assert_ge_le(actual: $T, expected: $T);"],
+    "description": "assert (actual >= min) and (actual <= max)"
+  },
+
 
   "Rell test": {
     "prefix": "rell.test",
@@ -236,6 +316,12 @@
   "test.run": {
     "prefix": "run",
     "body": ["run()"],
+    "description": "transaction run"
+  },
+
+  "test.run_must_fail": {
+    "prefix": "run_must_fail",
+    "body": ["run_must_fail();"],
     "description": "transaction run"
   },
 
