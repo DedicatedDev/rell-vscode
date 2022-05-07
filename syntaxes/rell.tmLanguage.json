@@ -41,7 +41,7 @@
                 },
                 {
                     "name": "storage.type.rell",
-    				"match": "\\b(val|var|key|namespace|@mount|@external)\\b"
+    				"match": "\\b(val|var|key|index|mutable|namespace|@mount|@external)\\b"
                 }
             ]
         },
@@ -109,7 +109,7 @@
                 },
                 {
                     "name": "support.variable.rell",
-                    "match": "(?<=(val|var|key|namespace|@mount|@external))\\s+[a-zA-Z_][a-zA-Z_0-9]*"
+                    "match": "(?<=(val|var|key|index|mutable|namespace|@mount|@external))\\s+[a-zA-Z_][a-zA-Z_0-9]*"
                 }
             ]
         },

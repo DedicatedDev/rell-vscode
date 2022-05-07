@@ -90,7 +90,7 @@
 
   "Update Statement": {
     "prefix": "update",
-    "body": ["update $0 @${?} {$2 == $3 and $4 == $5 } (.$6,.$7)", "});"],
+    "body": ["update $0 @$1 {$2 == $3 and $4 == $5 } (.$6,.$7);"],
     "description": "Operators @, @?, @*, @+ are used to specify cardinality, like for the at-operator. If the number of updated records does not match the cardinality, a run-time error occurs."
   },
 
