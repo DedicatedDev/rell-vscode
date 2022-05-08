@@ -150,7 +150,7 @@
 
   "log: function": {
     "prefix": "log",
-    "body": ["log(...);"],
+    "body": ["log($1);"],
     "description": "print a message to the log (same usage as print)"
   },
 
