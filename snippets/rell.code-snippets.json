@@ -138,13 +138,13 @@
 
   "abs: function": {
     "prefix": "abs",
-    "body": ["abs(${1:integer});"],
+    "body": ["abs(${1:integer})"],
     "description": "absolute value"
   },
 
   "empty: function": {
     "prefix": "empty",
-    "body": ["abs(${1:T?});"],
+    "body": ["empty($1)"],
     "description": "returns true if the argument is null or an empty collection and false"
   },
 
@@ -156,13 +156,13 @@
 
   "max: function": {
     "prefix": "max",
-    "body": ["max($1,$2);"],
+    "body": ["max($1,$2)"],
     "description": "maximum of two values"
   },
 
   "min: function": {
     "prefix": "min",
-    "body": ["min($1,$2);"],
+    "body": ["min($1,$2)"],
     "description": "maximum of two values"
   },
 
@@ -192,7 +192,7 @@
 
   "Log to the print": {
     "prefix": "print",
-    "body": ["print($1);", "$0"],
+    "body": ["print($1);"],
     "description": "Log to the console"
   },
 
@@ -219,7 +219,7 @@
     "body": ["assert_true(actual: $1);"],
     "description": "assert that the value is “true”"
   },
-  
+
   "Assert False": {
     "prefix": "assert_false",
     "body": ["assert_false(actual: $1);"],
@@ -232,13 +232,11 @@
     "description": "assert that the value is null"
   },
 
-
   "Assert Not Null": {
     "prefix": "assert_not_null",
     "body": ["assert_not_null(actual: $1);"],
     "description": "assert that the value is not null"
   },
-
 
   "Assert LT": {
     "prefix": "assert_lt",
@@ -269,7 +267,7 @@
     "body": ["assert_gt_le(actual: $T, min: $T, max: $T);"],
     "description": "assert (actual > min) and (actual < max)"
   },
- 
+
   "Assert GT LE": {
     "prefix": "assert_gt_le",
     "body": ["assert_gt_le(actual: $T, expected: $T);"],
@@ -286,7 +284,6 @@
     "body": ["assert_ge_le(actual: $T, expected: $T);"],
     "description": "assert (actual >= min) and (actual <= max)"
   },
-
 
   "Rell test": {
     "prefix": "rell.test",
@@ -324,7 +321,6 @@
     "body": ["run_must_fail();"],
     "description": "transaction run"
   },
-
 
   "test.keypairs": {
     "prefix": "rell.test.keypairs",
