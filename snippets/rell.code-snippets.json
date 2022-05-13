@@ -154,6 +154,12 @@
     "description": "print a message to the log (same usage as print)"
   },
 
+  "debug_log: function": {
+    "prefix": "log_debug",
+    "body": ["log(\"**************\");","log($1);","log(\"*************\");"],
+    "description": "print a message to the debug log (same usage as print)"
+  },
+
   "max: function": {
     "prefix": "max",
     "body": ["max($1,$2)"],
