@@ -196,6 +196,12 @@
     "description": "Prefix key word"
   },
 
+  "@extendable: prefix": {
+    "prefix": "@extendable",
+    "body": ["@extendable('$1')"],
+    "description": "Prefix key word"
+  },
+
   "Log to the print": {
     "prefix": "print",
     "body": ["print($1);"],
